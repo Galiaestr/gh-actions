@@ -6,8 +6,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Inicia Actions"
-      - run: node --version 
+      - run: python --version 
       - name: Check out repository code
         uses: actions/checkout@v6
       - run: ls -al
-      - run: node app.js
+      - run: python app.py
+
+  ejecuta-script-deno:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Inicia Actions"
+      - name: Config Deno
+        uses: denoland/setup-deno@v2
+      - run: deno --version
+      - name: Check out repository code
+        uses: actions/checkout@v6
+      - run: ls -al
+      - run: deno app.js
