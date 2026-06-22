@@ -1,17 +1,17 @@
 name: Expression
-run-name: Practicando con Expresiones
+run-name: Practicando con expresiones
 on:
-workflow_dispatch:
-  inputs:
-    edad:
-      description: 'Edad'
-      required: true
-      type: integer
-    NOMBRE:
-      description: 'Tu nombre
-      required: true
-      default: 'Sin nombre'
-      type: string
+  workflow_dispatch:
+    inputs:
+      edad:
+        description: 'Edad'
+        required: true
+        type: integer
+      nombre:
+        description: 'Tu nombre'
+        required: true
+        default: 'Yo'
+        type: string
 jobs:
   mayor:
     if: ${{ inputs.edad >= 18 }}
