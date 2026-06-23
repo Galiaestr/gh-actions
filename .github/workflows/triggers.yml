@@ -25,5 +25,5 @@ jobs:
     steps:
       - name: Inicia Job
         run: echo "Job starting..."
-      - run: echo "Hi!!!!"
+      - run: echo "Hi!!!"
       - run: echo "The job was automatically triggered by a ${{ github.event_name }} event."

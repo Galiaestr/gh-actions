@@ -1,0 +1,10 @@
+name: Expression
+run-name: Practicando con expresiones
+on:
+  workflow_dispatch:
+    inputs:
+      nombre:
+        description: 'Nombre'
+        required: true
+        type: string
+    
