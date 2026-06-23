@@ -1,11 +1,9 @@
 import os
 
-name = os.getenv('NAME')
-age = int(os.getenv('EDAD'))
+name = os.getenv("Nombre")
+edad = int(os.getenv('Edad'))
 
-print("Hola" + name)
-
-if age >= 18:
-    print("Eres mayor de edad")
+if edad >= 18:
+    print(f"{name} es mayor de edad")
 else:
-    print("Eres menor de edad")
+    print(f"{name} es menor de edad")
