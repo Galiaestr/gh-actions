@@ -1,34 +1,36 @@
 name: Expression
-run-name: Practicando con expresiones
+run-name: ${{ github.actor }} probando expresiones en GitHub Actions
 on:
   workflow_dispatch:
     inputs:
-      edad:
-        description: 'Edad'
-        required: true
-        type: integer
-      nombre:
-        description: 'Tu nombre'
-        required: true
-        default: 'Yo'
-        type: string
+        edad:
+            description: 'Edad'
+            required: false
+            type: integer
+            
+        nombre:
+            description: 'Nombre'
+            required: true
+            type: string
+
 jobs:
   mayor:
     if: ${{ inputs.edad >= 18 }}
     runs-on: ubuntu-latest
     steps:
-      - name: Correr script
-        run: echo ${{ inputs.nombre }} es mayor de edad
+      - name: run script
+        run: echo ${{ inputs.nombre }} Eres mayor de edad
   menor:
     if: ${{ inputs.edad < 18 }}
     runs-on: ubuntu-latest
     steps:
-      - name: Correr script
-        run: echo ${{ inputs.nombre }} es menor de edad
-  ejecuta-python-condicionales :
+      - name: run script
+        run: echo ${{ inputs.nombre }} Eres menor de edad
+
+  ejecuta-python-condicionales:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "EDAD=${{ inputs.edad }}" >> $GITHUB_ENV
-      - run: echo "NAME=${{ inputs.nombre }}" >> $GITHUB_ENV
+      - run: echo "Edad=${{ inputs.edad }}" >> $GITHUB_ENV
+      - run: echo "Nombre=${{ inputs.nombre }}" >> $GITHUB_ENV
       - uses: actions/checkout@v6
       - run: python condicionales.py
